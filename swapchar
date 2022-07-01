@@ -1,0 +1,28 @@
+/*
+refer str below and swap 1st num t last eg. 6shital5 
+if name consist number in it do not swap eg 54Shital6 do not swap
+
+*/
+
+let str = 'Hello 5Shital6 world2';
+
+let arr = str.split(' ');
+console.log(arr);
+arr.forEach((val) => {
+
+  let name = val.substring(1, val.length - 1);
+  let isValidName = /\d/.test(name);
+
+  console.log(name, isValidName);
+  if (
+    !isNaN(val.charAt(0)) &&
+    !isNaN(val.charAt(val.length - 1)) &&
+    !isValidName
+  ) {
+    name = name.toLowerCase();
+
+    let result = val.charAt(val.length - 1) + name + val.charAt(0);
+
+    console.log(result);
+  }
+});
